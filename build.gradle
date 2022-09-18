@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'anya.annenko'
+group 'qa.annenko'
 version '1.0-SNAPSHOT'
 
 repositories {
