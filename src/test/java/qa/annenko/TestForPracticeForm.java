@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.files.DownloadActions.click;
 
-public class testForPracticeForm {
+public class TestForPracticeForm {
 
     @BeforeAll
     static void setUp() {
@@ -44,6 +44,7 @@ public class testForPracticeForm {
       $("#submit").click();
 // Проверяем результат
       $(".modal-dialog").should(appear);
-      $(".table-responsive").shouldHave(text("Anna Abramova"), text("abramova@test.ru"), text("9222365736"));
+      $(".table-responsive").shouldHave(text("Anna Abramova"), text("abramova@test.ru"), text("9222365736"),
+              text("History"), text("Test Current Address"), text("Reading"), text("15 October,2009"), text("NCR Delhi"));
     }
 }
