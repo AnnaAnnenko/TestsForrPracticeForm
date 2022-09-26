@@ -27,14 +27,16 @@ public class TestForPracticeForm {
       $("#firstName").setValue("Anna");
       $("#lastName").setValue("Abramova");
       $("#userEmail").setValue("abramova@test.ru");
-      $("#gender-radio-2").parent().click();
+      $("#genterWrapper").$(byText("Female")).click();
+//      $("#gender-radio-2").parent().click();
       $("#userNumber").setValue("9222365736");
       $("#dateOfBirthInput").click();
       $(".react-datepicker__month-select").selectOption("October");
       $(".react-datepicker__year-select").selectOption("2009");
       $(".react-datepicker__day--015:not(.react-datepicker__day--outside-month)").click();
       $("#subjectsInput").setValue("History").pressEnter();
-      $("[for=hobbies-checkbox-2]").click();
+      $("#hobbiesWrapper").$(byText("Reading")).click();
+//      $("[for=hobbies-checkbox-2]").click();
       $("#uploadPicture").uploadFromClasspath("Img/1.png");
       $("#currentAddress").setValue("Test Current Address");
       $("#state").click();
@@ -44,7 +46,7 @@ public class TestForPracticeForm {
       $("#submit").click();
 // Проверяем результат
       $(".modal-dialog").should(appear);
-      $(".table-responsive").shouldHave(text("Anna Abramova"), text("abramova@test.ru"), text("9222365736"),
-              text("History"), text("Test Current Address"), text("Reading"), text("15 October,2009"), text("NCR Delhi"));
+      $(".table-responsive").shouldHave(text("Anna Abramova"), text("abramova@test.ru"), text("Female"), text("9222365736"),
+              text("History"), text("Test Current Address"), text("1.png"), text("Reading"), text("15 October,2009"), text("NCR Delhi"));
     }
 }
