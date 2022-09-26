@@ -28,7 +28,6 @@ public class TestForPracticeForm {
       $("#lastName").setValue("Abramova");
       $("#userEmail").setValue("abramova@test.ru");
       $("#genterWrapper").$(byText("Female")).click();
-//      $("#gender-radio-2").parent().click();
       $("#userNumber").setValue("9222365736");
       $("#dateOfBirthInput").click();
       $(".react-datepicker__month-select").selectOption("October");
@@ -36,7 +35,6 @@ public class TestForPracticeForm {
       $(".react-datepicker__day--015:not(.react-datepicker__day--outside-month)").click();
       $("#subjectsInput").setValue("History").pressEnter();
       $("#hobbiesWrapper").$(byText("Reading")).click();
-//      $("[for=hobbies-checkbox-2]").click();
       $("#uploadPicture").uploadFromClasspath("Img/1.png");
       $("#currentAddress").setValue("Test Current Address");
       $("#state").click();
