@@ -29,22 +29,24 @@ public class TestForPracticeFormWithPageObject {
                 .setEmail("abramova@test.ru")
                 .setGender("Female")
                 .setUserNumber("9222365736")
-                .setDateOfBirth("15", "October", "2009");
-
-        $("#subjectsInput").setValue("History").pressEnter();
-        $("#hobbiesWrapper").$(byText("Reading")).click();
-        $("#uploadPicture").uploadFromClasspath("Img/1.png");
-        $("#currentAddress").setValue("Test Current Address");
-        $("#state").click();
-        $("#stateCity-wrapper").$(byText("NCR")).click();
-        $("#city").click();
-        $("#stateCity-wrapper").$(byText("Delhi")).click();
-        $("#submit").click();
+                .setDateOfBirth("15", "October", "2009")
+                .setSubjectInput("History")
+                .setHobbieInput("Reading")
+                .uploadPicture("Img/1.png")
+                .setCurrentAddressInput("Test Current Address")
+                .setStateInput("NCR").setCityInput("Delhi")
+                .clickSubmit();
 // Проверяем результат
         practiceFormPages.checkTableVisible()
-                .checkRegistrationTable("test", "Anna Abramova");
-        $(".modal-dialog").should(appear);
-        $(".table-responsive").shouldHave(text("Anna Abramova"), text("abramova@test.ru"), text("Female"), text("9222365736"),
-                text("History"), text("Test Current Address"), text("1.png"), text("Reading"), text("15 October,2009"), text("NCR Delhi"));
+                .checkRegistrationTable("Student Name", "Anna Abramova")
+                .checkRegistrationTable("Student Email", "abramova@test.ru")
+                .checkRegistrationTable("Gender", "Female")
+                .checkRegistrationTable("Mobile", "9222365736")
+                .checkRegistrationTable("Subjects", "History")
+                .checkRegistrationTable("Address", "Test Current Address")
+                .checkRegistrationTable("Picture", "1.png")
+                .checkRegistrationTable("Hobbies", "Reading")
+                .checkRegistrationTable("Date of Birth", "15 October,2009")
+                .checkRegistrationTable("State and City", "NCR Delhi");
     }
 }
